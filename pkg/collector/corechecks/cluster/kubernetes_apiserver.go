@@ -73,6 +73,11 @@ func (k *KubeASCheck) Configure(config, initConfig integration.Data) error {
 		return err
 	}
 
+	err = k.CommonConfigure(initConfig)
+	if err != nil {
+		return err
+	}
+
 	log.Debugf("Running config %s", config)
 	return nil
 }
